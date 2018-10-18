@@ -3,8 +3,8 @@ let name = document.querySelector('#name');
 
 function getInfo(){
 
-    let randomNumber = Math.floor((Math.random() * 88) + 1)
-    let apiUrl = 'https://swapi.co/api/people/' + randomNumber;
+    let randomNumber = Math.floor((Math.random() * 50) + 1)
+    let apiUrl = 'https://swapi.co/api/planets/' + randomNumber;
     axios.get(apiUrl).then(function(response){
         updateInfo(response.data);
     })
