@@ -2,7 +2,10 @@ let button = document.querySelector('#button');
 let name = document.querySelector('#name');
 
 function getInfo(){
-    axios.get('https://swapi.co/api/people/1/').then(function(response){
+
+    let randomNumber = Math.floor((Math.random() * 88) + 1)
+    let apiUrl = 'https://swapi.co/api/people/' + randomNumber;
+    axios.get(apiUrl).then(function(response){
         updateInfo(response.data);
     })
 }
