@@ -10,7 +10,7 @@ function getInfo(){
     axios.get(apiUrl).then(response=>{
         updateInfo(response.data);
     }).catch(e => {
-        console.log("Erro");
+        updateInfoError();
     })
 }
 
@@ -18,6 +18,12 @@ function updateInfo(data){
     name.innerText = data.name;
     climate.innerText = data.climate;
     terrain.innerText = data.terrain;
+}
+
+function updateInfoError(){
+    name.innerText = 'Erro de busca';
+    climate.innerText = '';
+    terrain.innerText = '';
 }
 
 button.addEventListener('click', getInfo);
